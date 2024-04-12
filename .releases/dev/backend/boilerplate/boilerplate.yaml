@@ -1,0 +1,65 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: boilerplate
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: ./charts/boilerplate
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: boilerplate
+        namespace: flux-systems
+      version: 1.0.0
+  install:
+    remediation:
+      retries: 3
+  interval: 1m
+  releaseName: boilerplate
+  targetNamespace: evops-web
+  timeout: 5m
+  values:
+    # Default values for hello-world.
+    # This is a YAML-formatted file.
+    # Declare variables to be passed into your templates.
+
+    replicaCount: 1
+
+    image:
+      repository: nginx
+      pullPolicy: IfNotPresent
+      # Overrides the image tag whose default is the chart appVersion.
+      tag: ""
+
+    nameOverride: ""
+    fullnameOverride: ""
+
+    serviceAccount:
+      # Specifies whether a service account should be created
+      create: true
+      # Annotations to add to the service account
+      annotations: {}
+      # The name of the service account to use.
+      # If not set and create is true, a name is generated using the fullname template
+      name: ""
+
+    service:
+      type: ClusterIP
+      port: 80
+
+    namespace: "devops-web"
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: boilerplate
+  namespace: flux-system
+spec:
+  interval: 10s
+  ref:
+    branch: main
+  url: https://github.com/fernandokarnagi/chart-boilerplate
