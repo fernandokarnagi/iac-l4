@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: GitRepository
         name: boilerplate
-        namespace: flux-systems
+        namespace: flux-system
       version: 1.0.0
   install:
     remediation:
