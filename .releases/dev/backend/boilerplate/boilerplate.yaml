@@ -22,36 +22,21 @@ spec:
   targetNamespace: devops
   timeout: 5m
   values:
-    # Default values for hello-world.
-    # This is a YAML-formatted file.
-    # Declare variables to be passed into your templates.
-
-    replicaCount: 1
-
     image:
       repository: nginx
       pullPolicy: IfNotPresent
-      # Overrides the image tag whose default is the chart appVersion.
       tag: "latest"
-
     nameOverride: ""
     fullnameOverride: ""
-
-    serviceAccount:
-      # Specifies whether a service account should be created
-      create: true
-      # Annotations to add to the service account
-      annotations: {}
-      # The name of the service account to use.
-      # If not set and create is true, a name is generated using the fullname template
+    replicaCount: 2
+    serviceAccount: 
+      create: true 
+      annotations: {} 
       name: ""
-
     service:
       type: ClusterIP
       port: 80
-
     namespace: "devops"
-
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
