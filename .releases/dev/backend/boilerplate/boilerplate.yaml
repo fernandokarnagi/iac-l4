@@ -19,7 +19,7 @@ spec:
       retries: 3
   interval: 1m
   releaseName: boilerplate
-  targetNamespace: evops-web
+  targetNamespace: devops
   timeout: 5m
   values:
     # Default values for hello-world.
@@ -50,7 +50,7 @@ spec:
       type: ClusterIP
       port: 80
 
-    namespace: "devops-web"
+    namespace: "devops"
 
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
