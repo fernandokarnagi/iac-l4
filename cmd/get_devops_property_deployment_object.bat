@@ -1,0 +1,1 @@
+kubectl -n devops-property get deployment.apps/property-individual -o yaml

@@ -1,0 +1,1 @@
+kubectl -n flux-system get HelmRelease

@@ -1,0 +1,1 @@
+kubectl -n devops-property get all

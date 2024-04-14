@@ -1,0 +1,1 @@
+kubectl describe kustomization -n flux-system flux-l4-dev
