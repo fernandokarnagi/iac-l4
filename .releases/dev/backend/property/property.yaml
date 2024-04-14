@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: property
@@ -21,6 +21,8 @@ spec:
   releaseName: property
   targetNamespace: devops-property
   timeout: 2m0s
+  driftDetection:   
+    mode: enabled
   upgrade:
     remediation:
       retries: 3
