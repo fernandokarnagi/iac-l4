@@ -21,11 +21,11 @@ spec:
   releaseName: property
   targetNamespace: devops-property
   timeout: 2m0s
-  # driftDetection:   
-  #   mode: enabled
-  # upgrade:
-  #   remediation:
-  #     retries: 3
+  driftDetection:   
+    mode: enabled
+  upgrade:
+    remediation:
+      retries: 3
   values:
     image:
       repository: nginx
