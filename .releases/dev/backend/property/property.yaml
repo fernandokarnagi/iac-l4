@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: ./charts/property
-      interval: 1m
+      interval: 1m0s
       sourceRef:
         kind: GitRepository
         name: property
@@ -17,10 +17,15 @@ spec:
   install:
     remediation:
       retries: 3
-  interval: 1m
+  interval: 1m0s
   releaseName: property
   targetNamespace: devops-property
-  timeout: 5m
+  timeout: 2m0s
+  # driftDetection:   
+  #   mode: enabled
+  # upgrade:
+  #   remediation:
+  #     retries: 3
   values:
     image:
       repository: nginx
@@ -43,7 +48,7 @@ metadata:
   name: property
   namespace: flux-system
 spec:
-  interval: 10s
+  interval: 1m0s
   ref:
     branch: main
   url: https://github.com/fernandokarnagi/chart-property
