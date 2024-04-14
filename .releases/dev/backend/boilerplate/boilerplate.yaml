@@ -28,7 +28,7 @@ spec:
       tag: "latest"
     nameOverride: ""
     fullnameOverride: ""
-    replicaCount: 2
+    replicaCount: 5
     serviceAccount: 
       create: true 
       annotations: {} 
