@@ -30,7 +30,7 @@ spec:
     image:
       repository: nginx
       pullPolicy: IfNotPresent
-      tag: "1.20"
+      tag: "1.19"
     nameOverride: ""
     fullnameOverride: ""
     replicaCount: 1
