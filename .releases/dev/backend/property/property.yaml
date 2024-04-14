@@ -25,10 +25,10 @@ spec:
     image:
       repository: nginx
       pullPolicy: IfNotPresent
-      tag: "latest"
+      tag: "1.23"
     nameOverride: ""
     fullnameOverride: ""
-    replicaCount: 5
+    replicaCount: 1
     serviceAccount: 
       create: true 
       annotations: {} 
